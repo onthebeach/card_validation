@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'card_validation'
 
 module CardValidation
-  describe Generate do
+  describe GenerateValid do
     describe '#generate_valid' do
       subject { CardValidation::Luhn.new(described_class.valid) }
 
@@ -10,7 +10,9 @@ module CardValidation
         expect(subject).to be_valid
       end
     end
+  end
 
+  describe GenerateInvalid do
     describe '#generate_invalid' do
       subject { CardValidation::Luhn.new(described_class.invalid) }
 

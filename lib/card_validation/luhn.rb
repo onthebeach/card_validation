@@ -1,6 +1,10 @@
+require 'card_validation/validity'
+
 module CardValidation
   class Luhn
     attr_accessor :number
+
+    include Validity
 
     def initialize(number)
       @number = number
@@ -10,26 +14,12 @@ module CardValidation
       new(number).valid?
     end
 
-    def valid?
-      sum % 10 == 0
-    end
-
-    private
-
-    def cleaned
-      number.to_s.gsub(/\D/,'')
-    end
-
-    def digits
-      cleaned.chars.map(&:to_i)
-    end
-
     def doubled
       digits.reverse.each_with_index.map{ |x, i| i.odd? ? x * 2 : x }
     end
 
-    def sum
-      doubled.inject(0){ |x, y| y > 9 ? x + y - 9 : x + y }
+    def valid?
+      sum % 10 == 0
     end
   end
 end
