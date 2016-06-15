@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ash Phythian"]
   spec.email         = ["ashley.phythian@onthebeach.co.uk"]
 
-  spec.summary       = "TBA"
-  spec.description   = "TBA"
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Validates and generates card numbers based on the Luhn algorithm"
+  spec.description   = "The generated numbers can be made valid or invalid."
+  spec.homepage      = "https://github.otbeach.com/ashley-phythian/card_validation"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

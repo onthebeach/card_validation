@@ -1,5 +1,3 @@
-require "card_validation/version"
-
 module CardValidation
   class Generate < Luhn
     attr_accessor :length
@@ -9,25 +7,25 @@ module CardValidation
     end
 
     def self.valid(length = 16)
-      new(length).generate_valid
+      new(length).valid
     end
 
     def self.invalid(length = 16)
-      new(length).generate_invalid
+      new(length).invalid
     end
 
-    def generate_valid
-      (card_number * 10) + valid_check
+    def valid
+      (number * 10) + valid_check
     end
 
-    def generate_invalid
-      (card_number * 10) + invalid_check
+    def invalid
+      (number * 10) + invalid_check
     end
 
     private
 
-    def card_number
-      @card_number ||= rand(card_min..card_max)
+    def number
+      @number ||= rand(card_min..card_max)
     end
 
     def card_min

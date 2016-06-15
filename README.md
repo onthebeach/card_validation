@@ -25,20 +25,24 @@ Or install it yourself as:
 **Valid** Card numbers of length `n` (with a default of 16) that will pass the Luhn Algorithm can be generated as such:
 ```
 CardValidation::Generate.valid(n)
+CardValidation::Generate.valid
 CardValidation::Generate.new(n).valid
+CardValidation::Generate.new.valid
 ```
 
-**Invalid** Card numbers of length `n` that will fail the Luhn Algorithm can be generated as such:
+**Invalid** Card numbers of length `n` (with a default of 16) that will fail the Luhn Algorithm can be generated as such:
 ```
 CardValidation::Generate.invalid(n)
+CardValidation::Generate.invalid
 CardValidation::Generate.new(n).invalid
+CardValidation::Generate.new.invalid
 ```
 
 ### Luhn Card Validation
 
 ```
-CardValidation::Luhn.valid?(1234123412341238) # => true
-CardValidation::Luhn.valid?('1234123412341238') # => true
+CardValidation::Luhn.valid?(1234_1234_1234_1238) # => true
+CardValidation::Luhn.valid?('1234 1234 1234 1238') # => true
 CardValidation::Luhn.new('1234123412341238').valid? # => true
 
 CardValidation::Luhn.valid?(1234123412341234) # => false

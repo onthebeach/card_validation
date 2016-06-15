@@ -1,13 +1,13 @@
 module CardValidation
   class Luhn
-    attr_accessor :card_number
+    attr_accessor :number
 
-    def initialize(card_number)
-      @card_number = card_number
+    def initialize(number)
+      @number = number
     end
 
-    def self.valid?(card_number)
-      new(card_number).valid?
+    def self.valid?(number)
+      new(number).valid?
     end
 
     def valid?
@@ -16,20 +16,20 @@ module CardValidation
 
     private
 
+    def cleaned
+      number.to_s.gsub(/\D/,'')
+    end
+
     def digits
-      card_number.to_s.chars.map(&:to_i)
+      cleaned.chars.map(&:to_i)
     end
 
     def doubled
       digits.reverse.each_with_index.map{ |x, i| i.odd? ? x * 2 : x }
     end
 
-    def reduced
-      doubled.map{ |x| x > 9 ? x - 9 : x }
-    end
-
     def sum
-      reduced.inject(:+)
+      doubled.inject(0){ |x, y| y > 9 ? x + y - 9 : x + y }
     end
   end
 end
