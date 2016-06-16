@@ -9,6 +9,14 @@ module Validity
     @number ||= rand(card_min..card_max)
   end
 
+  def valid
+    (cleaned_num * 10) + valid_check
+  end
+
+  def invalid
+    (cleaned_num * 10) + invalid_check
+  end
+
   def card_min
     10 ** (length - 2)
   end
@@ -17,12 +25,16 @@ module Validity
     10 ** (length - 1) - 1
   end
 
-  def cleaned
+  def cleaned_string
     number.to_s.gsub(/\D/,'')
   end
 
+  def cleaned_num
+    cleaned_string.to_i
+  end
+
   def digits
-    cleaned.chars.map(&:to_i)
+    cleaned_string.chars.map(&:to_i)
   end
 
   def doubled

@@ -7,9 +7,5 @@ module CardValidation
     def self.valid(length = 16)
       new(length).valid
     end
-
-    def valid
-      (number * 10) + valid_check
-    end
   end
 end

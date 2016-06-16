@@ -14,12 +14,12 @@ module CardValidation
       new(number).valid?
     end
 
-    def doubled
-      digits.reverse.each_with_index.map{ |x, i| i.odd? ? x * 2 : x }
-    end
-
     def valid?
       sum % 10 == 0
+    end
+
+    def doubled
+      digits.reverse.each_with_index.map{ |x, i| i.odd? ? x * 2 : x }
     end
   end
 end
