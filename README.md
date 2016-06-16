@@ -51,11 +51,6 @@ CardValidation.check(12) # => 5
 CardValidation.complete(12) # => 125
 ```
 
-## TODO
-
-Add functionality to return check digit based on a given number
-
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
