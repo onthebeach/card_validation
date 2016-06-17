@@ -18,7 +18,7 @@ module CardValidation
       sum % 10 == 0
     end
 
-    def doubled
+    def double
       digits.reverse.each_with_index.map{ |x, i| i.odd? ? x * 2 : x }
     end
   end
