@@ -53,9 +53,6 @@ CardValidation.complete(12) # => 125
 
 ### TODO
 
-Split out specs so that the Validity module tests the functionality that other
-modules are currently testing on its behalf.
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

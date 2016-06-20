@@ -5,10 +5,6 @@ module Validity
     @length = length
   end
 
-  def number
-    @number ||= rand(card_min..card_max)
-  end
-
   def valid
     (clean_number * 10) + valid_check
   end
@@ -26,6 +22,10 @@ module Validity
   end
 
   private
+
+  def number
+    @number ||= rand(card_min..card_max)
+  end
 
   def card_min
     10 ** (length - 2)

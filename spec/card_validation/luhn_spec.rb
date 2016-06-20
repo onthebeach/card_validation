@@ -5,10 +5,10 @@ module CardValidation
   describe Luhn do
     subject { CardValidation::Luhn.new(card_number).valid? }
 
-    let(:real_card_number) { '79927398713' }
+    let(:real_card_number) { CardValidation.valid }
     let(:real_card_number_spaces) { '7992 7398_713' }
     let(:real_card_number_integer) { 79927398713 }
-    let(:fake_card_number) { '79927398712' }
+    let(:fake_card_number) { CardValidation.invalid }
 
     describe '#valid?' do
       context 'the card number is valid' do
