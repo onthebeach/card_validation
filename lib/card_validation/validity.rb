@@ -24,7 +24,7 @@ module Validity
   private
 
   def number
-    @number ||= rand(card_min..card_max)
+    @number ||= card_min + rand(card_max - card_min)
   end
 
   def card_min
