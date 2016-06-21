@@ -7,6 +7,7 @@ end
 
 RSpec.describe Validity do
   subject { DummyClass.new }
+
   let(:clean_number) { 123412341234123 }
   let(:sum) { 67 }
 
