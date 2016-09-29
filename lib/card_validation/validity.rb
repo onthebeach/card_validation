@@ -51,6 +51,14 @@ module Validity
     digits.reverse.each_with_index.map { |x, i| i.even? ? x * 2 : x }
   end
 
+  def empty?
+    number.respond_to?(:empty?) && number.empty?
+  end
+
+  def nil?
+    number.nil?
+  end
+
   def sum
     double.inject(0) { |x, y| reduce(x,y) }
   end

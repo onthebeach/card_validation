@@ -15,6 +15,8 @@ module CardValidation
     end
 
     def valid?
+      return false if nil? || empty?
+
       sum % 10 == 0
     end
 
