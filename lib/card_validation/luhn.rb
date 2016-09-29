@@ -7,7 +7,7 @@ module CardValidation
     include Validity
 
     def initialize(number)
-      @number = number
+      @number = number.to_s
     end
 
     def self.valid?(number)
@@ -15,7 +15,7 @@ module CardValidation
     end
 
     def valid?
-      return false if nil? || empty?
+      return false if number.empty?
 
       sum % 10 == 0
     end
