@@ -34,6 +34,18 @@ module CardValidation
 
         it { is_expected.to be(false) }
       end
+
+      context 'when nil' do
+        let(:card_number) { nil }
+
+        it { is_expected.to be(false) }
+      end
+
+      context 'when empty' do
+        let(:card_number) { '' }
+
+        it { is_expected.to be(false) }
+      end
     end
   end
 end
