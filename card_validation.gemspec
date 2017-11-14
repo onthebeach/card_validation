@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Validates and generates card numbers based on the Luhn algorithm"
   spec.description   = "The generated numbers can be made valid or invalid."
-  spec.homepage      = "https://github.otbeach.com/ashley-phythian/card_validation"
+  spec.homepage      = "https://github.com/onthebeach/card_validation"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
